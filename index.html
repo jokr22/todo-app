@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📝 Task Manager</h1>
+      <p>Stay organized, get things done</p>
+    </div>
+
+    <div class="input-section">
+      <input type="text" id="taskInput" placeholder="Task name...">
+      <input type="text" id="reasonInput" placeholder="Reason...">
+      <input type="date" id="dateInput">
+      <input type="time" id="timeInput">
+      <button onclick="addTask()">Add Task</button>
+    </div>
+
+    <div class="filters">
+      <button class="active" onclick="filterTasks('all')" id="filterAll">All</button>
+      <button onclick="filterTasks('active')" id="filterActive">Active</button>
+      <button onclick="filterTasks('completed')" id="filterCompleted">Completed</button>
+    </div>
+
+    <table class="task-table" id="taskTable">
+      <thead>
+        <tr>
+          <th style="width: 50px;">Status</th>
+          <th>Task</th>
+          <th>Reason</th>
+          <th>Date & Time</th>
+          <th style="width: 100px;">Actions</th>
+        </tr>
+      </thead>
+      <tbody id="taskList">
+      </tbody>
+    </table>
+
+    <div class="footer">
+      <span id="taskCount">0 tasks left</span>
+      <button class="clear-btn" onclick="clearCompleted()">Clear Completed</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
